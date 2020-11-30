@@ -162,6 +162,32 @@ class Imovel extends Banco{
         return $result;
     }
 
+    public function listAllTipo($tipo) {
+
+        //cria um objeto do tipo conexao
+        $conexao = new Conexao();
+        //cria a conexao com o banco de dados
+        $conn = $conexao->getConection();
+        //cria query de seleção
+        $query = "SELECT * FROM imovel where tipo = :tipo";
+        //Prepara a query para execução
+        $stmt = $conn->prepare($query);
+        //Cria um array para receber o resultado da seleção
+        $result = array();
+        //executa a query
+        if ($stmt->execute(array(':tipo'=> $tipo))) {
+            //o resultado da busca será retornado como um objeto da classe
+            while ($rs = $stmt->fetchObject(Imovel::class)) {
+                //armazena esse objeto em uma posição do vetor
+                $result[] = $rs;
+            }
+        }else{
+            $result = false;
+        }
+
+        return $result;
+    }
+
     public function count() {
         //cria um objeto do tipo conexao
         $conexao = new Conexao();

@@ -37,7 +37,7 @@ class ImovelController{
     }
 
     /**
-     * Lista os usuários
+     * Lista os imoveis
      */
     public function listar()
     {
@@ -88,6 +88,17 @@ class ImovelController{
         }
 
         return $imagem;
+    }
+
+    /**
+     * Lista os imoveis por tipo
+     */
+    public function listarTipo($tipo)
+    {
+        //cria um objeto do tipo Usuario
+        $imovel = new Imovel;
+        //chama o método listAll()
+        return $imovel->listAllTipo($tipo);
     }
 
 }
