@@ -8,9 +8,6 @@ if(isset($_GET['tipo'])){
   $imoveis = call_user_func(array('ImovelController','listar'));
 }
 
-
-
-
 ?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <ul class="navbar-nav">

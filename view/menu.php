@@ -10,6 +10,13 @@
         <a class="dropdown-item" href="index.php?page=imovel">Imovel</a>
       </div>
     </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Listar</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="index.php?page=usuario&action=listar">Usuario</a>
+        <a class="dropdown-item" href="index.php?page=imovel&action=listar">Imovel</a>
+      </div>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Menu2 </a>
     </li>
