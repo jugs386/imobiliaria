@@ -1,4 +1,5 @@
 <?php
+call_user_func(array('VisualizacaoController','salvar'));
 $imovel = call_user_func(array('ImovelController','editar'),$_GET['id']);
 ?>
 <div class="container">
