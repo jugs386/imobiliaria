@@ -45,9 +45,13 @@ if(isset($_GET['tipo'])){
             echo '<strong>Valor: </strong>'.$imovel->getValor().'<br>';
             $tipo = $imovel->getTipo()=='A'?'Aluguel':'Venda';
             echo '<strong>Tipo: </strong>'.$tipo.'<br>';
+            echo '</td>';
             $cont++;
-            if($cont==4)
+            if($cont==4){
               $cont=0;
+              echo '</tr>';
+            }
+              
 
           }
         }
