@@ -15,17 +15,10 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" href="index.php?page=usuario&action=listar">Usuario</a>
         <a class="dropdown-item" href="index.php?page=imovel&action=listar">Imovel</a>
-        <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Imovel</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="index.php?page=usuario&action=listar">Aluguel</a>
-        <a class="dropdown-item" href="index.php?page=imovel&action=listar">Venda</a>
-      </div>
-    </li>
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Menu2 </a>
+      <a class="nav-link" href="#">Relatório</a>
     </li>
     <li class="nav-items right">
       <a class="nav-link" href="sair.php">Sair</a>
