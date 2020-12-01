@@ -4,6 +4,7 @@ session_start();
 //importa o Controllers
 require_once 'controller/UsuarioController.php';
 require_once 'controller/ImovelController.php';
+require_once 'controller/VisualizacaoController.php';
 //adiciona o cabeçalho
 require_once 'head.php';
 

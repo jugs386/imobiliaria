@@ -36,6 +36,12 @@ if(isset($_GET['tipo'])){
               $cont=0;
 
           }
+        }else{
+            ?>
+                <tr>
+                    <td colspan="3">Nenhum registro encontrado</td>
+                </tr>
+                <?php
         }
 ?>
         </tbody>
