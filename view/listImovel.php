@@ -9,7 +9,7 @@ if(isset($_GET['tipo'])){
 ?>
 <div class="container">
 
-<h1>Imovéis</h1>
+<h1>Imóveis</h1>
 <hr>
 <table class="table" style="top:40px;">
         <tbody>
