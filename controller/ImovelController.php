@@ -15,12 +15,17 @@ class ImovelController{
         if(is_uploaded_file($_FILES['foto']['tmp_name'])) {
             $imagem['data'] =file_get_contents($_FILES['foto']['tmp_name']);
             $imagem['tipo'] = $_FILES['foto']['type'];
+            $path = 'imagens/'.$_FILES['foto']['name'];
+            $imagem['path'] = $path;
+            
+            move_uploaded_file($_FILES['foto']['tmp_name'],$path);
         }
         //verifica se o array imagem não está vazio, se tiver alguma imagem no mesmo
         //quer dizer que o usuário alterou a imagem ou está cadastrando um imovel novo
         if(!empty($imagem)){
             $imovel->setFoto($imagem['data']);
             $imovel->setFotoTipo($imagem['tipo']);
+            $imovel->setPath($imagem['path']);
         }else{
             $imovel->setFoto($fotoAtual);
             $imovel->setFotoTipo($fotoTipo);

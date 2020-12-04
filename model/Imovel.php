@@ -10,6 +10,7 @@ class Imovel extends Banco{
     private $valor;
     private $tipo;
     private $fotoTipo;
+    private $path;
 
     public function getId(){
         return $this->id;
@@ -61,6 +62,17 @@ class Imovel extends Banco{
         $this->fotoTipo = $fotoTipo;
     }
 
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+    }
+
     public function save() {
         $result = false;
         //cria um objeto do tipo conexao
@@ -81,13 +93,13 @@ class Imovel extends Banco{
                 }
             }else{
                 //cria query de inserção passando os atributos que serão armazenados
-                $query = "insert into imovel (id, descricao, foto, valor, tipo, fotoTipo) 
-                values (null,:descricao,:foto,:valor,:tipo,:fotoTipo)";
+                $query = "insert into imovel (id, descricao, foto, valor, tipo, fotoTipo, pathFoto) 
+                values (null,:descricao,:foto,:valor,:tipo,:fotoTipo,:pathFoto)";
                 //Prepara a query para execução
                 $stmt = $conn->prepare($query);
                 //executa a query
                 if ($stmt->execute(array(':descricao' => $this->descricao, ':foto' => $this->foto, ':valor' => $this->valor,
-                ':tipo' => $this->tipo, ':fotoTipo' => $this->fotoTipo))) {
+                ':tipo' => $this->tipo, ':fotoTipo' => $this->fotoTipo, ':pathFoto' => $this->path))) {
                     $result = $stmt->rowCount();
                 }
             }
@@ -205,6 +217,6 @@ class Imovel extends Banco{
     }
 
 
+ 
 
-    
 }
