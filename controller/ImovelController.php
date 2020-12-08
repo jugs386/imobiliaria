@@ -79,7 +79,8 @@ class ImovelController{
 
         //cria um objeto do tipo imovel
         $imovel = new Imovel;
-        
+        $imovel = $imovel->find($id);
+        unlink($imovel->getPath());
         $imovel = $imovel->remove($id);
 
     }

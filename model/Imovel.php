@@ -112,7 +112,7 @@ class Imovel extends Banco{
         $result = false;
         //cria um objeto do tipo conexao
         $conexao = new Conexao();
-        //cria a conexao com o banco de dados
+        //cria a conexao com o banco de dadosgi
         $conn = $conexao->getConection();
         //cria query de remoção
         $query = "DELETE FROM imovel where id = :id";
