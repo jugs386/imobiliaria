@@ -26,3 +26,4 @@ create table visualizacao(
 );
 
 insert into usuario values (null,'admin','e10adc3949ba59abbe56e057f20f883e','A');
+alter table imovel add path varchar(50);
