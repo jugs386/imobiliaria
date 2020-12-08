@@ -17,7 +17,7 @@ class ImovelController{
             $imagem['tipo'] = $_FILES['foto']['type'];
             $path = 'imagens/'.$_FILES['foto']['name'];
             $imagem['path'] = $path;
-            
+            //upload do arquivo para o servidor 
             move_uploaded_file($_FILES['foto']['tmp_name'],$path);
         }
         //verifica se o array imagem não está vazio, se tiver alguma imagem no mesmo
@@ -26,9 +26,14 @@ class ImovelController{
             $imovel->setFoto($imagem['data']);
             $imovel->setFotoTipo($imagem['tipo']);
             $imovel->setPath($imagem['path']);
+            //Verifica se existe um path da imagem e se sim remove a mesma do servidor
+            if(!empty($_POST['path']))
+                unlink($_POST['path']);
+
         }else{
             $imovel->setFoto($fotoAtual);
             $imovel->setFotoTipo($fotoTipo);
+            $imovel->setPath($_POST['path']);
         }
     
         //armazena as informações do $_POST via set

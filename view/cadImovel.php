@@ -42,8 +42,8 @@ ob_start();
                     </select>
                 </div>
                 <div class="card-footer">
-                    <input type="hidden" name="id" id="id" 
-                    value="<?php echo isset($imovel)?$imovel->getId():''; ?>" />
+                    <input type="hidden" name="id" id="id" value="<?php echo isset($imovel)?$imovel->getId():''; ?>" />
+                    <input type="hidden" name="path" id="path" value="<?php echo isset($imovel)?$imovel->getPath():''; ?>" />
                     <input type="submit" class="btn btn-success" name="btnSalvar" id="btnSalvar">
                 </div>
             </div>
